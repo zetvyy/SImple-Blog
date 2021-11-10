@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { connect } from "react-redux";
+import { deletePost } from "./../store/actions";
 
 class PostDetail extends Component {
   render() {
@@ -26,7 +27,7 @@ class PostDetail extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     deletePost: id => {
-      dispatch({ type: "DELETE_POST", id });
+      dispatch(deletePost(id));
     }
   };
 };

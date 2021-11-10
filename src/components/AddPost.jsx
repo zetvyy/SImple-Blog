@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import { addPost } from "./../store/actions";
 
 class AddPost extends Component {
   state = {
@@ -60,7 +61,7 @@ class AddPost extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     createPost: post => {
-      dispatch({ type: "ADD_POST", post });
+      dispatch(addPost(post));
     }
   };
 };
